@@ -1,0 +1,10 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: naming-server
+eureka:
+  client:
+    #remover isso em prod
+    register-with-eureka: false
+    fetch-registry: false
