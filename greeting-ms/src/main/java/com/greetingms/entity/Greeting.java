@@ -1,4 +1,4 @@
-package br.com.erudio;
+package com.greetingms.entity;
 
 public class Greeting {
 	
