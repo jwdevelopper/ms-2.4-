@@ -4,6 +4,8 @@ import com.br.bookservice.dto.response.Cambio;
 import com.br.bookservice.model.Book;
 import com.br.bookservice.proxy.CambioProxy;
 import com.br.bookservice.repository.BookRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
 import java.math.BigDecimal;
 import java.util.HashMap;
 
+@Tag( name = "Book endpoint")
 @RestController
 @RequestMapping("book-service")
 public class BookController {
@@ -47,6 +50,7 @@ public class BookController {
 //        return book;
 //    }
 
+    @Operation(summary = "Busca um determinado livro por ID")
     @GetMapping(value = "/{id}/{currency}")
     public Book findBook(
             @PathVariable("id") Long id,
